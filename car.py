@@ -5,12 +5,12 @@ Y_COORDINATE = [-165, -100, -35, 30, 100, 170]
 COLORS = ["crimson", "indigo", "gold", "maroon", "navy", "alice blue", "royal blue", "dark slate blue", "deep pink",
           "indian red", "dark orange", "sea green", "cyan"]
 START_X = [370, 380, 395, 415, 450]
-DISTANCE = 3
 
 
 class Cars:
 
     def __init__(self):
+        self.distance = 3
         self.list_of_cars = []
         self.create_cars()
 
@@ -44,4 +44,7 @@ class Cars:
 
     def move(self):
         for car in self.list_of_cars:
-            car.backward(DISTANCE)
+            car.backward(self.distance)
+
+    def increase_speed(self):
+        self.distance += 2
